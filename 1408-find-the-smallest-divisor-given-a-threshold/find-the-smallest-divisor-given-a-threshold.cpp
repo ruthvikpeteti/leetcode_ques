@@ -1,5 +1,3 @@
-#include <cmath>
-#include <algorithm>
 class Solution {
 public:
     int smallestDivisor(vector<int>& nums, int threshold) {
@@ -10,7 +8,7 @@ public:
             int mid = (high + low) / 2;
             int sum = 0;
             for(int i : nums){
-                sum+=ceil(double(i)/double(mid));
+                sum+=(i + mid - 1) / mid;
             }
             if(sum<=threshold){
                 ans = mid;
